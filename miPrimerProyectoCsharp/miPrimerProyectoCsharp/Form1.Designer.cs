@@ -50,9 +50,10 @@
             // lblnum1
             // 
             this.lblnum1.AutoSize = true;
+            this.lblnum1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnum1.Location = new System.Drawing.Point(64, 118);
             this.lblnum1.Name = "lblnum1";
-            this.lblnum1.Size = new System.Drawing.Size(42, 16);
+            this.lblnum1.Size = new System.Drawing.Size(46, 16);
             this.lblnum1.TabIndex = 1;
             this.lblnum1.Text = "Num1";
             // 
@@ -84,9 +85,10 @@
             // lblnum2
             // 
             this.lblnum2.AutoSize = true;
+            this.lblnum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnum2.Location = new System.Drawing.Point(64, 162);
             this.lblnum2.Name = "lblnum2";
-            this.lblnum2.Size = new System.Drawing.Size(42, 16);
+            this.lblnum2.Size = new System.Drawing.Size(46, 16);
             this.lblnum2.TabIndex = 4;
             this.lblnum2.Text = "Num2";
             // 
