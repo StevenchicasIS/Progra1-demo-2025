@@ -31,3 +31,14 @@ C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025\miPrimerProy
 C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.csproj.CoreCompileInputs.cache
 C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.exe
 C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.pdb
+C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025f\miPrimerProyectoCsharp\miPrimerProyectoCsharp\bin\Debug\miPrimerProyectoCsharp.exe.config
+C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025f\miPrimerProyectoCsharp\miPrimerProyectoCsharp\bin\Debug\miPrimerProyectoCsharp.exe
+C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025f\miPrimerProyectoCsharp\miPrimerProyectoCsharp\bin\Debug\miPrimerProyectoCsharp.pdb
+C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025f\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.csproj.AssemblyReference.cache
+C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025f\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.exe.config
+C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025f\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.Form1.resources
+C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025f\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.Properties.Resources.resources
+C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025f\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.csproj.GenerateResource.cache
+C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025f\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.csproj.CoreCompileInputs.cache
+C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025f\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.exe
+C:\Users\oscar\OneDrive\Desktop\Progra1-demo-2025\Progra1-demo-2025f\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.pdb
