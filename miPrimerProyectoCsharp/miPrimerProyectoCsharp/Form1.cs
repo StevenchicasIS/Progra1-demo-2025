@@ -15,44 +15,45 @@ namespace miPrimerProyectoCsharp {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e) {
-            // hacer un ejercicio en C# haciendo uso de matrices, estructura de repeticiones y condicionales, que 
-            // determine el sueldo neto a pagr a un empleado descontado las deducciones correspondientes de ley. 
-            // isss, afp, isr.
+
         }
-        private double [][] tablaIsr = {
-                  new Double[] {0.01, 472, 0, 0},
-                  new Double[] {472.01, 895.24, 0.10, 17.67},
-                  new Double[] {895.25, 2038.10, 0.20, 60.00}, 
-                  new Double[] {2038.11, 99999999, 0.30, 288.57} 
+        string[][] etiquetas = new string[][]
+        {
+            new string[]{"Dolar", "pesos Mexicanos", "Quetzat", "Lempira", "Colon SV", "Cordoba", "CR"}, // Monedas 
+            new string[]{"Metros", "CM", "Pulgadas", "Pie", "Varas", "Yardas", "KM", "Millas"}, // Longitudes
+            new string[]{"LIbras", "Onzas", "Gramos", "Kilogramos", "Quintal", "Tonelada corta"}, // Masa
+            new string[]{"Galon", "Litros", "Pintas US", "Mililitrios", }, // Volumen
+            new string[]{"GB", "Bit", "Byte", "KB", "MG", "TB",}, // Almacenamiento
+            new string[]{"Dia", "Segundos", "Minutos", "Horas", "Semana", "Meses", "Año"} // Tiempo
+
         };
-        private double calcularDeducciones(double sueldo, int porcentaje) {
-            return sueldo * porcentaje; 
+        double[][] valores = new double[][] {
+            new double[]{1, 18.78, 7.66, 26.15, 8.75, 36.78, 504.12, }, // Monedas
+            new double[]{1, 100, 39.37, 3.28084, 1.193, 1.09361, 0.001, 0.000621371}, // Longitudes
+            new double[]{1, 16, 453.592, 0.453592, 0.01, 0.001, 0.0005}, // Masa  
+            new double[]{1, 3.78541, 8, 3785.41}, // Volumen
+            new double[]{1, 8e+9, 1e+9, 1e+6, 1000, 0.001}, // Almacenamiento
+            new double[]{1, 86400, 1440, 24, 0.142857, 0.0328767, 0.00273973}, // Tiempo
+        };
+        private void BTNconvertir_Click(object sender, EventArgs e) {
+            double cantidad = double.Parse(TXTcantidadconversor.Text);
+
+            int tipo = CBOtipoconversor.SelectedIndex;
+            int de = CBOdeconversor.SelectedIndex;
+            int a = CBOaconversor.SelectedIndex;
+
+            double respuesta= cantidad * valores[tipo][a] / valores[tipo][de];
+
+            LBLrespuestaconversor.Text = "RESPUESTA ?: " + respuesta.ToString("N2");
         }
-        private double CalcularIsr(double sueldo) {
-            double isr = 0; 
-            for (int i=0; i < tablaIsr.Length; i++)  {
-                if (sueldo >= tablaIsr[i][0] && sueldo <= tablaIsr[i][1]) {
-                    isr = (sueldo - tablaIsr[i][0]) * tablaIsr[i][2] + tablaIsr[i][3];
-                }
-            }
-            return isr;
-        }
-        private void BTNcalcular_Click(object sender, EventArgs e)  {
-            double sueldo= 0, isss=0, afp=0, isr=0, sueldoneto=0; 
-            sueldo = double.Parse(txtsueldo.Text);
 
-            isss = calcularDeducciones(sueldo, 003); // 3% de ISSS -> 3/100 = 0.03
-            afp = calcularDeducciones(sueldo, 00725); // 7.25% de AFP -> 7.25/100 = 0.0725
-            isr = CalcularIsr(sueldo - isss - afp); // calcular ISR
+        private void CBOtipoconversor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CBOdeconversor.Items.Clear();
+            CBOaconversor.Items.Clear();
 
-            sueldoneto = sueldo - isss - afp - isr; // calcular sueldo neto
-
-            LBLisss.Text = "ISSS : " + isss.ToString("C2");
-            LBLafp.Text = "AFP : " + afp.ToString("C2");
-            LBLisr.Text = "ISR : " + isr.ToString("C2");
-            LBLtotalDeducciones.Text = "Total Deducciones : " + (isss + afp + isr).ToString("C2");
-            LBLsueldoneto.Text = "Sueldo Neto : " + sueldoneto.ToString("C2");
-
+            CBOdeconversor.Items.AddRange(etiquetas[CBOtipoconversor.SelectedIndex]);
+            CBOaconversor.Items.AddRange(etiquetas[CBOtipoconversor.SelectedIndex]);
         }
     }
 }
