@@ -80,7 +80,8 @@
             "Masa",
             "Volumen",
             "Almacenamiento",
-            "Tiempo"});
+            "Tiempo",
+            "Area"});
             this.CBOtipoconversor.Location = new System.Drawing.Point(156, 62);
             this.CBOtipoconversor.Name = "CBOtipoconversor";
             this.CBOtipoconversor.Size = new System.Drawing.Size(160, 24);

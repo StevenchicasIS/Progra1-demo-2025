@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace miPrimerProyectoCsharp { 
 
@@ -24,7 +25,8 @@ namespace miPrimerProyectoCsharp {
             new string[]{"LIbras", "Onzas", "Gramos", "Kilogramos", "Quintal", "Tonelada corta"}, // Masa
             new string[]{"Galon", "Litros", "Pintas US", "Mililitrios", }, // Volumen
             new string[]{"GB", "Bit", "Byte", "KB", "MG", "TB",}, // Almacenamiento
-            new string[]{"Dia", "Segundos", "Minutos", "Horas", "Semana", "Meses", "Año"} // Tiempo
+            new string[]{"Dia", "Segundos", "Minutos", "Horas", "Semana", "Meses", "Año"}, // Tiempo
+            new string[]{"Kilometro cuadrado", "Metro cuadrado", "Milla cuadrada", "Yarda cuadrada", "Pie cuadrada", "Pulgada cuadrada", "Hectarea", "Acre",} // Area
 
         };
         double[][] valores = new double[][] {
@@ -34,13 +36,29 @@ namespace miPrimerProyectoCsharp {
             new double[]{1, 3.78541, 8, 3785.41}, // Volumen
             new double[]{1, 8e+9, 1e+9, 1e+6, 1000, 0.001}, // Almacenamiento
             new double[]{1, 86400, 1440, 24, 0.142857, 0.0328767, 0.00273973}, // Tiempo
+            new double[]{ 1e-6, 1, 3.8610216e-7, 1.19599005, 10.7639104, 1550.0031, 1e-4, 0.000247105 }, // Área
         };
+        private double convertir(int tipo, int de, int a, double cantidad)
+        {
+            if (cantidad <= 0)
+            {
+                return 0;
+            }
+            return cantidad * valores[tipo][a] / valores[tipo][de]; 
+        }
         private void BTNconvertir_Click(object sender, EventArgs e) {
             double cantidad = double.Parse(TXTcantidadconversor.Text);
-
-            int tipo = CBOtipoconversor.SelectedIndex;
+            try
+            {
+                double cantida = double.Parse(TXTcantidadconversor.Text);
+            }catch (Exception er)
+            {
+                LBLrespuestaconversor.Text = "Error "+ er.Message +" solo valores validos";
+            }
+                int tipo = CBOtipoconversor.SelectedIndex;
             int de = CBOdeconversor.SelectedIndex;
             int a = CBOaconversor.SelectedIndex;
+
 
             double respuesta= cantidad * valores[tipo][a] / valores[tipo][de];
 
