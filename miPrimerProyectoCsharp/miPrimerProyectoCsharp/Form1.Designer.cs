@@ -75,12 +75,6 @@
             this.CBOtipoconversor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOtipoconversor.FormattingEnabled = true;
             this.CBOtipoconversor.Items.AddRange(new object[] {
-            "Monedas",
-            "Longitud",
-            "Masa",
-            "Volumen",
-            "Almacenamiento",
-            "Tiempo",
             "Area"});
             this.CBOtipoconversor.Location = new System.Drawing.Point(156, 62);
             this.CBOtipoconversor.Name = "CBOtipoconversor";
@@ -91,7 +85,7 @@
             // CBOdeconversor
             // 
             this.CBOdeconversor.FormattingEnabled = true;
-            this.CBOdeconversor.Location = new System.Drawing.Point(156, 119);
+            this.CBOdeconversor.Location = new System.Drawing.Point(156, 175);
             this.CBOdeconversor.Name = "CBOdeconversor";
             this.CBOdeconversor.Size = new System.Drawing.Size(160, 24);
             this.CBOdeconversor.TabIndex = 6;
@@ -99,7 +93,7 @@
             // CBOaconversor
             // 
             this.CBOaconversor.FormattingEnabled = true;
-            this.CBOaconversor.Location = new System.Drawing.Point(156, 171);
+            this.CBOaconversor.Location = new System.Drawing.Point(156, 119);
             this.CBOaconversor.Name = "CBOaconversor";
             this.CBOaconversor.Size = new System.Drawing.Size(160, 24);
             this.CBOaconversor.TabIndex = 8;
