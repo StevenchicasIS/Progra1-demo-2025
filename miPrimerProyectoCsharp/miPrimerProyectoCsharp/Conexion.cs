@@ -16,7 +16,7 @@ namespace miPrimerProyectoCsharp {
 
         public Conexion() //Constructor. Inicializador de los atributos.
         {
-            string cadenaConexion = "";
+            string cadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_academica6.mdf;Integrated Security=True";
             objConexion.ConnectionString = cadenaConexion;
             objConexion.Open(); // abrir la conexion a la BD.
         }

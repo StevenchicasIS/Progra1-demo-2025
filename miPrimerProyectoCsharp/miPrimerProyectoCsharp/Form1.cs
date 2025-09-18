@@ -16,7 +16,19 @@ namespace miPrimerProyectoCsharp {
         public Form1() {
             InitializeComponent();
 
-        }    
+        }
+        Conexion objConexion = new Conexion(); 
+        DataSet objds = new DataSet();
+        DataTable DataTable = new DataTable();
+
+        public int posicion = 0;
+        public string accion = "nuevo";
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
