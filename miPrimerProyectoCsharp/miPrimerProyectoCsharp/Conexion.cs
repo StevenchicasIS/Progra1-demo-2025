@@ -42,11 +42,9 @@ namespace miPrimerProyectoCsharp
         public string administrarDatosAlumnos(String[] datos, String accion)
         {
             String sql = "";
-            if (accion == "nuevo")
-            {
+            if (accion == "nuevo") {
                 sql = "INSERT INTO alumnos(codigo,nombre, direccion, telefono) VALUES (@codigo, @nombre, @direccion, @telefono)";
-            }
-            else if (accion == "modificar") {
+            } else if (accion == "modificar") {
                 sql = "UPDATE alumnos SET codigo=@codigo, nombre=@nombre, direccion=@direccion, telefono=@telefono WHERE idAlumno=@idAlumno";
             } else if (accion == "eliminar") {
                 sql = "DELETE FROM alumnos WHERE idAlumno=@idAlumno";
@@ -59,7 +57,7 @@ namespace miPrimerProyectoCsharp
                 objComando.CommandText = sql;
 
                 objComando.Parameters.Clear();
-                 objComando.Parameters.AddWithValue("@idAlumno",datos[0]);
+                objComando.Parameters.AddWithValue("@idAlumno",datos[0]);
                 objComando.Parameters.AddWithValue("@codigo", datos[1]);
                 objComando.Parameters.AddWithValue("@nombre", datos[2]);
                 objComando.Parameters.AddWithValue("@direccion", datos[3]);

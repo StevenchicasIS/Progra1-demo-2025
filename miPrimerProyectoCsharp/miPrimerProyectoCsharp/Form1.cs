@@ -11,11 +11,9 @@ using System.Windows.Forms.VisualStyles;
 
 namespace miPrimerProyectoCsharp {
 
-    public partial class Form1 : Form
-    {
+    public partial class Form1 : Form {
 
-        public Form1()
-        {
+        public Form1() {
             InitializeComponent();
 
         }
@@ -26,20 +24,17 @@ namespace miPrimerProyectoCsharp {
         public int posicion = 0;
         public string accion = "nuevo";
 
-        private void actualizards()
-        {
+        private void actualizards() {
             objDs.Clear(); //Limpiar el dataset
             objDs = objConexion.obtenerDatos();
             objDt = objDs.Tables["alumnos"];
             objDt.PrimaryKey = new DataColumn[] { objDt.Columns["idAlumno"] };
 
-
+            grdAlumnos.DataSource = objDt.DefaultView;
             mostrarDatos();
         }
-        private void mostrarDatos()
-        {
-            if (objDt.Rows.Count > 0)
-            {
+        private void mostrarDatos() {
+            if (objDt.Rows.Count > 0)  {
                 idAlumno.Text = objDt.Rows[posicion]["idAlumno"].ToString();
                 TXTCodigoAlumno.Text = objDt.Rows[posicion]["codigo"].ToString();
                 TXTnombrealumno.Text = objDt.Rows[posicion]["nombre"].ToString();
@@ -49,82 +44,59 @@ namespace miPrimerProyectoCsharp {
                 LBLnResgistroAlumnos.Text = (posicion + 1) + " de " + objDt.Rows.Count;
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
+        private void Form1_Load(object sender, EventArgs e) {
             actualizards();
         }
-
-        private void btnsiguientealumno_Click(object sender, EventArgs e)
-        {
-            if (posicion < objDt.Rows.Count - 1)
-            {
+        private void btnsiguientealumno_Click(object sender, EventArgs e){
+            if (posicion < objDt.Rows.Count - 1){
                 posicion++;// posicion = posicion + 1
                 mostrarDatos();
-            }
-            else
-            {
+            } else {
                 MessageBox.Show("Estas en el ultimo registro.", "Navegacion de Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void btnanterioralumno_Click(object sender, EventArgs e)
-        {
-            if (posicion > 0)
-            {
+        private void btnanterioralumno_Click(object sender, EventArgs e) {
+            if (posicion > 0) {
                 posicion--;// posicion = posicion - 1
                 mostrarDatos();
-            }
-            else
-            {
+            } else  {
                 MessageBox.Show("Estas en el primer registro.", "Navegacion de Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private void btnultimoalumno_Click(object sender, EventArgs e)
-        {
+        private void btnultimoalumno_Click(object sender, EventArgs e) {
             posicion = objDt.Rows.Count - 1;
             mostrarDatos();
         }
-        private void btnPrimeroalumno_Click(object sender, EventArgs e)
-        {
+        private void btnPrimeroalumno_Click(object sender, EventArgs e) {
             posicion = 0;
             mostrarDatos();
         }
-        private void estadoControles(Boolean estado)
-        {
+        private void estadoControles(Boolean estado) {
             grbDatosalumnos.Enabled = estado;
             grbNavegacionAlumonos.Enabled = !estado;
-            BTNeliminaralumno.Enabled = !estado;
+            BTNeliminaralumno.Enabled = !estado; 
         }
-        private void limpiarcontroles()
-        {
+        private void limpiarcontroles() {
             idAlumno.Text = "";
             TXTCodigoAlumno.Text = "";
             TXTnombrealumno.Text = "";
             TXTdireccionalumno.Text = "";
-            TXTtelefonoalumno.Text = "";
-        }
-        private void BTNnuevoalumno_Click(object sender, EventArgs e)
-        {
-            if (BTNagregarAlumno.Text == "NUEVO")
-            {
+            TXTtelefonoalumno.Text = ""; }
+        private void BTNnuevoalumno_Click(object sender, EventArgs e) {
+            if (BTNagregarAlumno.Text == "NUEVO") {
                 BTNagregarAlumno.Text = "Guardar";
                 BTNmodificarAlumno.Text = "Cancelar";
                 estadoControles(true);
                 accion = "Nuevo";
                 limpiarcontroles();
-            }
-            else
-            { //Guardar
+            } else { //Guardar
                 String[] alumnos = {
-                    idAlumno.Text, TXTCodigoAlumno.Text, TXTnombrealumno.Text, TXTdireccionalumno.Text,TXTtelefonoalumno.Text
-                 };
+                    idAlumno.Text, TXTCodigoAlumno.Text, TXTnombrealumno.Text, TXTdireccionalumno.Text,TXTtelefonoalumno.Text };
                 String respuesta = objConexion.administrarDatosAlumnos(alumnos, accion);
-                if (respuesta != "1")
-                {
+                if (respuesta != "1") {
                     MessageBox.Show(respuesta, "Error al guardar alumnos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
+                } else {
                     estadoControles(false);
                     BTNagregarAlumno.Text = "NUEVO";
                     BTNmodificarAlumno.Text = "MODIFICAR";
@@ -132,19 +104,15 @@ namespace miPrimerProyectoCsharp {
                 }
             }
         }
-
         private void BTNmodificaralumno_Click(object sender, EventArgs e)
         {
-            if (BTNmodificarAlumno.Text == "MODIFICAR")
-            {
+            if (BTNmodificarAlumno.Text == "MODIFICAR")  {
                 BTNagregarAlumno.Text = "Guardar";
                 BTNmodificarAlumno.Text = "Cancelar";
                 estadoControles(true);
                 accion = "modificar";
 
-            }
-            else
-            { //Cancelar
+            } else { //Cancelar
                 mostrarDatos();
                 estadoControles(false);
                 BTNagregarAlumno.Text = "NUEVO";
@@ -152,27 +120,37 @@ namespace miPrimerProyectoCsharp {
 
             }
         }
-
-        private void BTNeliminaralumno_Click(object sender, EventArgs e)
-        {
+        private void BTNeliminaralumno_Click(object sender, EventArgs e) {
             if (MessageBox.Show("Estas seguro de eliminar a" + TXTnombrealumno.Text,
-                    "Eliminar alumnos", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
+                    "Eliminar alumnos", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)  {
                 String respuesta = objConexion.administrarDatosAlumnos(
                     new String[] { idAlumno.Text, "", "", "", "" }, "eliminar"
                     );
-                if (respuesta != "1")
-                {
+                if (respuesta != "1")  {
                     MessageBox.Show(respuesta, "Error al eliminar alumnos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
+                } else {
                     posicion = 0;
                     actualizards();
 
                 }
-
             }
+        }
+        private void TXTbuscaralumnos_KeyUp(object sender, KeyEventArgs e)  {
+           filtarDatos(TXTbuscaralumnos.Text);
+        }
+
+        private void filtarDatos(String valor) {
+            DataView objDv = objDt.DefaultView;
+            objDv.RowFilter = "codigo Like '%" + valor + "%' OR nombre Like '%" + valor + "%'";
+            grdAlumnos.DataSource = objDv;
+            selecionarAlumno();
+        }
+        private void selecionarAlumno() {
+            posicion = objDt.Rows.IndexOf(objDt.Rows.Find( grdAlumnos.CurrentRow.Cells["id"].Value));
+            mostrarDatos();
+        }
+        private void grdAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)  {
+            selecionarAlumno();
         }
     }
 }
