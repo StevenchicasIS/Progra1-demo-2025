@@ -28,157 +28,422 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LBLtipoconversor = new System.Windows.Forms.Label();
-            this.LBLdeconversor = new System.Windows.Forms.Label();
-            this.LBLcantidadcoversor = new System.Windows.Forms.Label();
-            this.CBOtipoconversor = new System.Windows.Forms.ComboBox();
-            this.CBOdeconversor = new System.Windows.Forms.ComboBox();
-            this.CBOaconversor = new System.Windows.Forms.ComboBox();
-            this.LBLaconversor = new System.Windows.Forms.Label();
-            this.TXTcantidadconversor = new System.Windows.Forms.ComboBox();
-            this.LBLrespuestaconversor = new System.Windows.Forms.Label();
-            this.BTNconvertir = new System.Windows.Forms.Button();
+            this.grbBusquedaAlumnos = new System.Windows.Forms.GroupBox();
+            this.grdUsuarios = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscarUsuarios = new System.Windows.Forms.TextBox();
+            this.grbedicionusuario = new System.Windows.Forms.GroupBox();
+            this.btneliminarusuario = new System.Windows.Forms.Button();
+            this.btnmodificarusuario = new System.Windows.Forms.Button();
+            this.btnagregarusuario = new System.Windows.Forms.Button();
+            this.grbNavegacionUsuario = new System.Windows.Forms.GroupBox();
+            this.lblResgistroUsuarios = new System.Windows.Forms.Label();
+            this.btnultimousuario = new System.Windows.Forms.Button();
+            this.btnsiguienteusuario = new System.Windows.Forms.Button();
+            this.btnanteriorusuario = new System.Windows.Forms.Button();
+            this.btnPrimerousuario = new System.Windows.Forms.Button();
+            this.grbDatosusuarios = new System.Windows.Forms.GroupBox();
+            this.txtTelefonoUsuario = new System.Windows.Forms.TextBox();
+            this.lblTelefonoUsuario = new System.Windows.Forms.Label();
+            this.idUsuario = new System.Windows.Forms.Label();
+            this.txtDireccionUsuario = new System.Windows.Forms.TextBox();
+            this.lblDireccionUsuario = new System.Windows.Forms.Label();
+            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
+            this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.txtClaveUsuario = new System.Windows.Forms.TextBox();
+            this.lblClaveUsuario = new System.Windows.Forms.Label();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblIdUsuario = new System.Windows.Forms.Label();
+            this.grbBusquedaAlumnos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUsuarios)).BeginInit();
+            this.grbedicionusuario.SuspendLayout();
+            this.grbNavegacionUsuario.SuspendLayout();
+            this.grbDatosusuarios.SuspendLayout();
             this.SuspendLayout();
             // 
-            // LBLtipoconversor
+            // grbBusquedaAlumnos
             // 
-            this.LBLtipoconversor.AutoSize = true;
-            this.LBLtipoconversor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLtipoconversor.Location = new System.Drawing.Point(82, 64);
-            this.LBLtipoconversor.Name = "LBLtipoconversor";
-            this.LBLtipoconversor.Size = new System.Drawing.Size(68, 22);
-            this.LBLtipoconversor.TabIndex = 0;
-            this.LBLtipoconversor.Text = "TIPO :";
+            this.grbBusquedaAlumnos.Controls.Add(this.grdUsuarios);
+            this.grbBusquedaAlumnos.Controls.Add(this.txtBuscarUsuarios);
+            this.grbBusquedaAlumnos.Location = new System.Drawing.Point(521, 31);
+            this.grbBusquedaAlumnos.Name = "grbBusquedaAlumnos";
+            this.grbBusquedaAlumnos.Size = new System.Drawing.Size(731, 323);
+            this.grbBusquedaAlumnos.TabIndex = 7;
+            this.grbBusquedaAlumnos.TabStop = false;
+            this.grbBusquedaAlumnos.Text = "Busqueda usuarios";
             // 
-            // LBLdeconversor
+            // grdUsuarios
             // 
-            this.LBLdeconversor.AutoSize = true;
-            this.LBLdeconversor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLdeconversor.Location = new System.Drawing.Point(91, 121);
-            this.LBLdeconversor.Name = "LBLdeconversor";
-            this.LBLdeconversor.Size = new System.Drawing.Size(49, 22);
-            this.LBLdeconversor.TabIndex = 1;
-            this.LBLdeconversor.Text = "DE :";
+            this.grdUsuarios.AllowUserToAddRows = false;
+            this.grdUsuarios.AllowUserToDeleteRows = false;
+            this.grdUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.usuario,
+            this.clave,
+            this.nombre,
+            this.direccion,
+            this.telefono});
+            this.grdUsuarios.Location = new System.Drawing.Point(28, 73);
+            this.grdUsuarios.Name = "grdUsuarios";
+            this.grdUsuarios.ReadOnly = true;
+            this.grdUsuarios.RowHeadersWidth = 51;
+            this.grdUsuarios.RowTemplate.Height = 24;
+            this.grdUsuarios.Size = new System.Drawing.Size(680, 230);
+            this.grdUsuarios.TabIndex = 5;
             // 
-            // LBLcantidadcoversor
+            // id
             // 
-            this.LBLcantidadcoversor.AutoSize = true;
-            this.LBLcantidadcoversor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLcantidadcoversor.Location = new System.Drawing.Point(28, 238);
-            this.LBLcantidadcoversor.Name = "LBLcantidadcoversor";
-            this.LBLcantidadcoversor.Size = new System.Drawing.Size(122, 22);
-            this.LBLcantidadcoversor.TabIndex = 3;
-            this.LBLcantidadcoversor.Text = "CANTIDAD :";
+            this.id.DataPropertyName = "idUsuario";
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 125;
             // 
-            // CBOtipoconversor
+            // usuario
             // 
-            this.CBOtipoconversor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBOtipoconversor.FormattingEnabled = true;
-            this.CBOtipoconversor.Items.AddRange(new object[] {
-            "Monedas",
-            "Longitud",
-            "Masa",
-            "Volumen",
-            "Almacenamiento",
-            "Tiempo",
-            "Area"});
-            this.CBOtipoconversor.Location = new System.Drawing.Point(156, 62);
-            this.CBOtipoconversor.Name = "CBOtipoconversor";
-            this.CBOtipoconversor.Size = new System.Drawing.Size(160, 24);
-            this.CBOtipoconversor.TabIndex = 5;
-            this.CBOtipoconversor.SelectedIndexChanged += new System.EventHandler(this.CBOtipoconversor_SelectedIndexChanged);
+            this.usuario.DataPropertyName = "usuario";
+            this.usuario.HeaderText = "USUARIO";
+            this.usuario.MinimumWidth = 6;
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            this.usuario.Width = 125;
             // 
-            // CBOdeconversor
+            // clave
             // 
-            this.CBOdeconversor.FormattingEnabled = true;
-            this.CBOdeconversor.Location = new System.Drawing.Point(156, 119);
-            this.CBOdeconversor.Name = "CBOdeconversor";
-            this.CBOdeconversor.Size = new System.Drawing.Size(160, 24);
-            this.CBOdeconversor.TabIndex = 6;
+            this.clave.DataPropertyName = "clave";
+            this.clave.HeaderText = "CLAVE";
+            this.clave.MinimumWidth = 6;
+            this.clave.Name = "clave";
+            this.clave.ReadOnly = true;
+            this.clave.Width = 125;
             // 
-            // CBOaconversor
+            // nombre
             // 
-            this.CBOaconversor.FormattingEnabled = true;
-            this.CBOaconversor.Location = new System.Drawing.Point(156, 171);
-            this.CBOaconversor.Name = "CBOaconversor";
-            this.CBOaconversor.Size = new System.Drawing.Size(160, 24);
-            this.CBOaconversor.TabIndex = 8;
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 250;
             // 
-            // LBLaconversor
+            // direccion
             // 
-            this.LBLaconversor.AutoSize = true;
-            this.LBLaconversor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLaconversor.Location = new System.Drawing.Point(91, 173);
-            this.LBLaconversor.Name = "LBLaconversor";
-            this.LBLaconversor.Size = new System.Drawing.Size(35, 22);
-            this.LBLaconversor.TabIndex = 7;
-            this.LBLaconversor.Text = "A :";
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "DIRECCION";
+            this.direccion.MinimumWidth = 6;
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Width = 250;
             // 
-            // TXTcantidadconversor
+            // telefono
             // 
-            this.TXTcantidadconversor.FormattingEnabled = true;
-            this.TXTcantidadconversor.Location = new System.Drawing.Point(156, 236);
-            this.TXTcantidadconversor.Name = "TXTcantidadconversor";
-            this.TXTcantidadconversor.Size = new System.Drawing.Size(160, 24);
-            this.TXTcantidadconversor.TabIndex = 9;
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "TELEFONO";
+            this.telefono.MinimumWidth = 6;
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 125;
             // 
-            // LBLrespuestaconversor
+            // txtBuscarUsuarios
             // 
-            this.LBLrespuestaconversor.AutoSize = true;
-            this.LBLrespuestaconversor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLrespuestaconversor.Location = new System.Drawing.Point(91, 326);
-            this.LBLrespuestaconversor.Name = "LBLrespuestaconversor";
-            this.LBLrespuestaconversor.Size = new System.Drawing.Size(146, 22);
-            this.LBLrespuestaconversor.TabIndex = 10;
-            this.LBLrespuestaconversor.Text = "RESPUESTA ?";
+            this.txtBuscarUsuarios.Location = new System.Drawing.Point(28, 45);
+            this.txtBuscarUsuarios.Name = "txtBuscarUsuarios";
+            this.txtBuscarUsuarios.Size = new System.Drawing.Size(505, 22);
+            this.txtBuscarUsuarios.TabIndex = 4;
             // 
-            // BTNconvertir
+            // grbedicionusuario
             // 
-            this.BTNconvertir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNconvertir.ForeColor = System.Drawing.Color.Red;
-            this.BTNconvertir.Location = new System.Drawing.Point(407, 148);
-            this.BTNconvertir.Name = "BTNconvertir";
-            this.BTNconvertir.Size = new System.Drawing.Size(185, 71);
-            this.BTNconvertir.TabIndex = 11;
-            this.BTNconvertir.Text = "CONVERTIR";
-            this.BTNconvertir.UseVisualStyleBackColor = true;
-            this.BTNconvertir.Click += new System.EventHandler(this.BTNconvertir_Click);
+            this.grbedicionusuario.Controls.Add(this.btneliminarusuario);
+            this.grbedicionusuario.Controls.Add(this.btnmodificarusuario);
+            this.grbedicionusuario.Controls.Add(this.btnagregarusuario);
+            this.grbedicionusuario.Location = new System.Drawing.Point(521, 377);
+            this.grbedicionusuario.Name = "grbedicionusuario";
+            this.grbedicionusuario.Size = new System.Drawing.Size(439, 100);
+            this.grbedicionusuario.TabIndex = 6;
+            this.grbedicionusuario.TabStop = false;
+            this.grbedicionusuario.Text = "EDICION";
+            // 
+            // btneliminarusuario
+            // 
+            this.btneliminarusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminarusuario.Location = new System.Drawing.Point(295, 35);
+            this.btneliminarusuario.Name = "btneliminarusuario";
+            this.btneliminarusuario.Size = new System.Drawing.Size(138, 53);
+            this.btneliminarusuario.TabIndex = 3;
+            this.btneliminarusuario.Text = "ELIMINAR";
+            this.btneliminarusuario.UseVisualStyleBackColor = true;
+            // 
+            // btnmodificarusuario
+            // 
+            this.btnmodificarusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmodificarusuario.Location = new System.Drawing.Point(129, 35);
+            this.btnmodificarusuario.Name = "btnmodificarusuario";
+            this.btnmodificarusuario.Size = new System.Drawing.Size(160, 53);
+            this.btnmodificarusuario.TabIndex = 2;
+            this.btnmodificarusuario.Text = "MODIFICAR";
+            this.btnmodificarusuario.UseVisualStyleBackColor = true;
+            // 
+            // btnagregarusuario
+            // 
+            this.btnagregarusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregarusuario.Location = new System.Drawing.Point(6, 35);
+            this.btnagregarusuario.Name = "btnagregarusuario";
+            this.btnagregarusuario.Size = new System.Drawing.Size(117, 53);
+            this.btnagregarusuario.TabIndex = 0;
+            this.btnagregarusuario.Text = "NUEVO";
+            this.btnagregarusuario.UseVisualStyleBackColor = true;
+            // 
+            // grbNavegacionUsuario
+            // 
+            this.grbNavegacionUsuario.Controls.Add(this.lblResgistroUsuarios);
+            this.grbNavegacionUsuario.Controls.Add(this.btnultimousuario);
+            this.grbNavegacionUsuario.Controls.Add(this.btnsiguienteusuario);
+            this.grbNavegacionUsuario.Controls.Add(this.btnanteriorusuario);
+            this.grbNavegacionUsuario.Controls.Add(this.btnPrimerousuario);
+            this.grbNavegacionUsuario.Location = new System.Drawing.Point(94, 377);
+            this.grbNavegacionUsuario.Name = "grbNavegacionUsuario";
+            this.grbNavegacionUsuario.Size = new System.Drawing.Size(357, 100);
+            this.grbNavegacionUsuario.TabIndex = 5;
+            this.grbNavegacionUsuario.TabStop = false;
+            this.grbNavegacionUsuario.Text = "NAVEGACION";
+            // 
+            // lblResgistroUsuarios
+            // 
+            this.lblResgistroUsuarios.AutoSize = true;
+            this.lblResgistroUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResgistroUsuarios.Location = new System.Drawing.Point(140, 56);
+            this.lblResgistroUsuarios.Name = "lblResgistroUsuarios";
+            this.lblResgistroUsuarios.Size = new System.Drawing.Size(48, 16);
+            this.lblResgistroUsuarios.TabIndex = 11;
+            this.lblResgistroUsuarios.Text = "x de n";
+            // 
+            // btnultimousuario
+            // 
+            this.btnultimousuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnultimousuario.Location = new System.Drawing.Point(269, 35);
+            this.btnultimousuario.Name = "btnultimousuario";
+            this.btnultimousuario.Size = new System.Drawing.Size(61, 53);
+            this.btnultimousuario.TabIndex = 3;
+            this.btnultimousuario.Text = ">|";
+            this.btnultimousuario.UseVisualStyleBackColor = true;
+            // 
+            // btnsiguienteusuario
+            // 
+            this.btnsiguienteusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsiguienteusuario.Location = new System.Drawing.Point(202, 35);
+            this.btnsiguienteusuario.Name = "btnsiguienteusuario";
+            this.btnsiguienteusuario.Size = new System.Drawing.Size(61, 53);
+            this.btnsiguienteusuario.TabIndex = 2;
+            this.btnsiguienteusuario.Text = ">";
+            this.btnsiguienteusuario.UseVisualStyleBackColor = true;
+            // 
+            // btnanteriorusuario
+            // 
+            this.btnanteriorusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnanteriorusuario.Location = new System.Drawing.Point(73, 35);
+            this.btnanteriorusuario.Name = "btnanteriorusuario";
+            this.btnanteriorusuario.Size = new System.Drawing.Size(61, 53);
+            this.btnanteriorusuario.TabIndex = 1;
+            this.btnanteriorusuario.Text = "<";
+            this.btnanteriorusuario.UseVisualStyleBackColor = true;
+            // 
+            // btnPrimerousuario
+            // 
+            this.btnPrimerousuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrimerousuario.Location = new System.Drawing.Point(6, 35);
+            this.btnPrimerousuario.Name = "btnPrimerousuario";
+            this.btnPrimerousuario.Size = new System.Drawing.Size(61, 53);
+            this.btnPrimerousuario.TabIndex = 0;
+            this.btnPrimerousuario.Text = "|<";
+            this.btnPrimerousuario.UseVisualStyleBackColor = true;
+            // 
+            // grbDatosusuarios
+            // 
+            this.grbDatosusuarios.Controls.Add(this.txtTelefonoUsuario);
+            this.grbDatosusuarios.Controls.Add(this.lblTelefonoUsuario);
+            this.grbDatosusuarios.Controls.Add(this.idUsuario);
+            this.grbDatosusuarios.Controls.Add(this.txtDireccionUsuario);
+            this.grbDatosusuarios.Controls.Add(this.lblDireccionUsuario);
+            this.grbDatosusuarios.Controls.Add(this.txtNombreUsuario);
+            this.grbDatosusuarios.Controls.Add(this.lblNombreUsuario);
+            this.grbDatosusuarios.Controls.Add(this.txtClaveUsuario);
+            this.grbDatosusuarios.Controls.Add(this.lblClaveUsuario);
+            this.grbDatosusuarios.Controls.Add(this.txtUsuario);
+            this.grbDatosusuarios.Controls.Add(this.lblUsuario);
+            this.grbDatosusuarios.Controls.Add(this.lblIdUsuario);
+            this.grbDatosusuarios.Enabled = false;
+            this.grbDatosusuarios.Location = new System.Drawing.Point(94, 31);
+            this.grbDatosusuarios.Name = "grbDatosusuarios";
+            this.grbDatosusuarios.Size = new System.Drawing.Size(357, 323);
+            this.grbDatosusuarios.TabIndex = 4;
+            this.grbDatosusuarios.TabStop = false;
+            this.grbDatosusuarios.Text = "DATOS";
+            // 
+            // txtTelefonoUsuario
+            // 
+            this.txtTelefonoUsuario.Location = new System.Drawing.Point(162, 295);
+            this.txtTelefonoUsuario.Name = "txtTelefonoUsuario";
+            this.txtTelefonoUsuario.Size = new System.Drawing.Size(100, 22);
+            this.txtTelefonoUsuario.TabIndex = 12;
+            // 
+            // lblTelefonoUsuario
+            // 
+            this.lblTelefonoUsuario.AutoSize = true;
+            this.lblTelefonoUsuario.Location = new System.Drawing.Point(40, 301);
+            this.lblTelefonoUsuario.Name = "lblTelefonoUsuario";
+            this.lblTelefonoUsuario.Size = new System.Drawing.Size(85, 16);
+            this.lblTelefonoUsuario.TabIndex = 11;
+            this.lblTelefonoUsuario.Text = "TELEFONO :";
+            // 
+            // idUsuario
+            // 
+            this.idUsuario.AutoSize = true;
+            this.idUsuario.Location = new System.Drawing.Point(187, 45);
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.Size = new System.Drawing.Size(44, 16);
+            this.idUsuario.TabIndex = 10;
+            this.idUsuario.Text = "label1";
+            // 
+            // txtDireccionUsuario
+            // 
+            this.txtDireccionUsuario.Location = new System.Drawing.Point(162, 249);
+            this.txtDireccionUsuario.Name = "txtDireccionUsuario";
+            this.txtDireccionUsuario.Size = new System.Drawing.Size(100, 22);
+            this.txtDireccionUsuario.TabIndex = 9;
+            // 
+            // lblDireccionUsuario
+            // 
+            this.lblDireccionUsuario.AutoSize = true;
+            this.lblDireccionUsuario.Location = new System.Drawing.Point(40, 255);
+            this.lblDireccionUsuario.Name = "lblDireccionUsuario";
+            this.lblDireccionUsuario.Size = new System.Drawing.Size(83, 16);
+            this.lblDireccionUsuario.TabIndex = 8;
+            this.lblDireccionUsuario.Text = "DIRECCION:";
+            // 
+            // txtNombreUsuario
+            // 
+            this.txtNombreUsuario.Location = new System.Drawing.Point(162, 196);
+            this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.Size = new System.Drawing.Size(100, 22);
+            this.txtNombreUsuario.TabIndex = 7;
+            // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.AutoSize = true;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(40, 202);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(72, 16);
+            this.lblNombreUsuario.TabIndex = 6;
+            this.lblNombreUsuario.Text = " NOMBRE:";
+            // 
+            // txtClaveUsuario
+            // 
+            this.txtClaveUsuario.Location = new System.Drawing.Point(162, 145);
+            this.txtClaveUsuario.Name = "txtClaveUsuario";
+            this.txtClaveUsuario.Size = new System.Drawing.Size(100, 22);
+            this.txtClaveUsuario.TabIndex = 5;
+            // 
+            // lblClaveUsuario
+            // 
+            this.lblClaveUsuario.AutoSize = true;
+            this.lblClaveUsuario.Location = new System.Drawing.Point(40, 145);
+            this.lblClaveUsuario.Name = "lblClaveUsuario";
+            this.lblClaveUsuario.Size = new System.Drawing.Size(53, 16);
+            this.lblClaveUsuario.TabIndex = 4;
+            this.lblClaveUsuario.Text = "CLAVE:";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(162, 95);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(100, 22);
+            this.txtUsuario.TabIndex = 3;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(40, 95);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(74, 16);
+            this.lblUsuario.TabIndex = 2;
+            this.lblUsuario.Text = "USUARIO :";
+            // 
+            // lblIdUsuario
+            // 
+            this.lblIdUsuario.AutoSize = true;
+            this.lblIdUsuario.Location = new System.Drawing.Point(40, 45);
+            this.lblIdUsuario.Name = "lblIdUsuario";
+            this.lblIdUsuario.Size = new System.Drawing.Size(26, 16);
+            this.lblIdUsuario.TabIndex = 0;
+            this.lblIdUsuario.Text = "ID :";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 483);
-            this.Controls.Add(this.BTNconvertir);
-            this.Controls.Add(this.LBLrespuestaconversor);
-            this.Controls.Add(this.TXTcantidadconversor);
-            this.Controls.Add(this.CBOaconversor);
-            this.Controls.Add(this.LBLaconversor);
-            this.Controls.Add(this.CBOdeconversor);
-            this.Controls.Add(this.CBOtipoconversor);
-            this.Controls.Add(this.LBLcantidadcoversor);
-            this.Controls.Add(this.LBLdeconversor);
-            this.Controls.Add(this.LBLtipoconversor);
+            this.ClientSize = new System.Drawing.Size(1306, 602);
+            this.Controls.Add(this.grbBusquedaAlumnos);
+            this.Controls.Add(this.grbedicionusuario);
+            this.Controls.Add(this.grbNavegacionUsuario);
+            this.Controls.Add(this.grbDatosusuarios);
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "frm_usuario";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
+            this.grbBusquedaAlumnos.ResumeLayout(false);
+            this.grbBusquedaAlumnos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUsuarios)).EndInit();
+            this.grbedicionusuario.ResumeLayout(false);
+            this.grbNavegacionUsuario.ResumeLayout(false);
+            this.grbNavegacionUsuario.PerformLayout();
+            this.grbDatosusuarios.ResumeLayout(false);
+            this.grbDatosusuarios.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label LBLtipoconversor;
-        private System.Windows.Forms.Label LBLdeconversor;
-        private System.Windows.Forms.Label LBLcantidadcoversor;
-        private System.Windows.Forms.ComboBox CBOtipoconversor;
-        private System.Windows.Forms.ComboBox CBOdeconversor;
-        private System.Windows.Forms.ComboBox CBOaconversor;
-        private System.Windows.Forms.Label LBLaconversor;
-        private System.Windows.Forms.ComboBox TXTcantidadconversor;
-        private System.Windows.Forms.Label LBLrespuestaconversor;
-        private System.Windows.Forms.Button BTNconvertir;
+        private System.Windows.Forms.GroupBox grbBusquedaAlumnos;
+        private System.Windows.Forms.DataGridView grdUsuarios;
+        private System.Windows.Forms.TextBox txtBuscarUsuarios;
+        private System.Windows.Forms.GroupBox grbedicionusuario;
+        private System.Windows.Forms.Button btneliminarusuario;
+        private System.Windows.Forms.Button btnmodificarusuario;
+        private System.Windows.Forms.Button btnagregarusuario;
+        private System.Windows.Forms.GroupBox grbNavegacionUsuario;
+        private System.Windows.Forms.Label lblResgistroUsuarios;
+        private System.Windows.Forms.Button btnultimousuario;
+        private System.Windows.Forms.Button btnsiguienteusuario;
+        private System.Windows.Forms.Button btnanteriorusuario;
+        private System.Windows.Forms.Button btnPrimerousuario;
+        private System.Windows.Forms.GroupBox grbDatosusuarios;
+        private System.Windows.Forms.Label idUsuario;
+        private System.Windows.Forms.TextBox txtDireccionUsuario;
+        private System.Windows.Forms.Label lblDireccionUsuario;
+        private System.Windows.Forms.TextBox txtNombreUsuario;
+        private System.Windows.Forms.Label lblNombreUsuario;
+        private System.Windows.Forms.TextBox txtClaveUsuario;
+        private System.Windows.Forms.Label lblClaveUsuario;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblIdUsuario;
+        private System.Windows.Forms.TextBox txtTelefonoUsuario;
+        private System.Windows.Forms.Label lblTelefonoUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
     }
 }
 

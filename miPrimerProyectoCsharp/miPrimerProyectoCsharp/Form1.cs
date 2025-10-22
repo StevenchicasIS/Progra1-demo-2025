@@ -15,65 +15,126 @@ namespace miPrimerProyectoCsharp {
         public Form1() {
             InitializeComponent();
         }
-        private void Form1_Load(object sender, EventArgs e) {
+
+        Conexion objconexion = new Conexion();
+        DataSet objDs = new DataSet();
+        DataTable objDt = new DataTable();
+
+        public int posicion = 0;
+        public string accion = "nuevo";
+
+
+        private void ActualizarDs()
+        {
+            objDs.Clear(); //Limpiar el DataSet.
+            objDs = objconexion.obtenerDatos();
+            objDt = objDs.Tables["usuario"];
+            objDt.PrimaryKey = new DataColumn[] { objDt.Columns["id_Usuario"] };
+
+            grdUsuarios.DataSource = objDt.DefaultView;
+
+            mostrarDatos();
 
         }
-        string[][] etiquetas = new string[][]
+        private void mostrarDatos()
         {
-            new string[]{"Dolar", "pesos Mexicanos", "Quetzat", "Lempira", "Colon SV", "Cordoba", "CR"}, // Monedas 
-            new string[]{"Metros", "CM", "Pulgadas", "Pie", "Varas", "Yardas", "KM", "Millas"}, // Longitudes
-            new string[]{"LIbras", "Onzas", "Gramos", "Kilogramos", "Quintal", "Tonelada corta"}, // Masa
-            new string[]{"Galon", "Litros", "Pintas US", "Mililitrios", }, // Volumen
-            new string[]{"GB", "Bit", "Byte", "KB", "MG", "TB",}, // Almacenamiento
-            new string[]{"Dia", "Segundos", "Minutos", "Horas", "Semana", "Meses", "Año"}, // Tiempo
-            new string[]{"Kilometro cuadrado", "Metro cuadrado", "Milla cuadrada", "Yarda cuadrada", "Pie cuadrada", "Pulgada cuadrada", "Hectarea", "Acre",} // Area
-
-        };
-        double[][] valores = new double[][] {
-            new double[]{1, 18.78, 7.66, 26.15, 8.75, 36.78, 504.12, }, // Monedas
-            new double[]{1, 100, 39.37, 3.28084, 1.193, 1.09361, 0.001, 0.000621371}, // Longitudes
-            new double[]{1, 16, 453.592, 0.453592, 0.01, 0.001, 0.0005}, // Masa  
-            new double[]{1, 3.78541, 8, 3785.41}, // Volumen
-            new double[]{1, 8e+9, 1e+9, 1e+6, 1000, 0.001}, // Almacenamiento
-            new double[]{1, 86400, 1440, 24, 0.142857, 0.0328767, 0.00273973}, // Tiempo
-            new double[]{ 1e-6, 1, 3.8610216e-7, 1.19599005, 10.7639104, 1550.0031, 1e-4, 0.000247105 }, // Área
-        };
-        private double convertir(int tipo, int de, int a, double cantidad)
-        {
-            if (cantidad <= 0)
+            if (objDt.Rows.Count > 0)
             {
-                return 0;
+                idUsuario.Text = objDt.Rows[posicion]["idUsuario"].ToString();
+                txtUsuario.Text = objDt.Rows[posicion]["usuario"].ToString();
+                txtClaveUsuario.Text = objDt.Rows[posicion]["clave"].ToString();
+                txtNombreUsuario.Text = objDt.Rows[posicion]["nombre"].ToString();
+                txtDireccionUsuario.Text = objDt.Rows[posicion]["direccion"].ToString();
+                txtTelefonoUsuario.Text = objDt.Rows[posicion]["telefono"].ToString();
+
+
+                lblResgistroUsuarios.Text = (posicion + 1) + " de " + objDt.Rows.Count;
+
             }
-            return cantidad * valores[tipo][a] / valores[tipo][de]; 
+
         }
-        private void BTNconvertir_Click(object sender, EventArgs e) {
-            double cantidad = double.Parse(TXTcantidadconversor.Text);
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ActualizarDs();
+        }
+
+
+        private void estadoControles(Boolean estado)
+        {
+            grbDatosusuarios.Enabled = estado;
+            grbNavegacionUsuario.Enabled = !estado;
+            btneliminarusuario.Enabled = !estado;
+
+
+            grdUsuarios.Enabled = !estado;
+        }
+
+        private void limpiarControles()
+        {
+            idUsuario.Text = "";
+            txtUsuario.Text = "";
+            txtClaveUsuario.Text = "";
+            txtNombreUsuario.Text = "";
+            txtDireccionUsuario.Text = "";
+            txtTelefonoUsuario.Text = "";
+        }
+
+      
+
+        private void txtbuscaraUsuarios_KeyUp(object sender, KeyEventArgs e)
+        {
             try
             {
-                double cantida = double.Parse(TXTcantidadconversor.Text);
-            }catch (Exception er)
-            {
-                LBLrespuestaconversor.Text = "Error "+ er.Message +" solo valores validos";
+                filtrarDatos(txtBuscarUsuarios.Text);
             }
-                int tipo = CBOtipoconversor.SelectedIndex;
-            int de = CBOdeconversor.SelectedIndex;
-            int a = CBOaconversor.SelectedIndex;
-
-
-            double respuesta= cantidad * valores[tipo][a] / valores[tipo][de];
-
-            LBLrespuestaconversor.Text = "RESPUESTA ?: " + respuesta.ToString("N2");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void CBOtipoconversor_SelectedIndexChanged(object sender, EventArgs e)
+        private void filtrarDatos(String valor)
         {
-            CBOdeconversor.Items.Clear();
-            CBOaconversor.Items.Clear();
+            try
+            {
+                DataView objDv = objDt.DefaultView;
+                objDv.RowFilter = "codigo like '%" + valor + "%' OR nombre like '" + valor + "%'";
+                grdUsuarios.DataSource = objDv;
+                seleccionarUsuario();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
 
-            CBOdeconversor.Items.AddRange(etiquetas[CBOtipoconversor.SelectedIndex]);
-            CBOaconversor.Items.AddRange(etiquetas[CBOtipoconversor.SelectedIndex]);
+        private void seleccionarUsuario()
+        {
+            try
+            {
+                if (grdUsuarios.CurrentRow == null)
+                {
+                    MessageBox.Show("No hay filas");
+                    return;
+                }
+                string id = grdUsuarios.CurrentRow.Cells["id"].Value.ToString();
+                posicion = objDt.Rows.IndexOf(objDt.Rows.Find(id));
+                mostrarDatos();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
+        
 }
+
 
 
